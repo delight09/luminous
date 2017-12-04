@@ -71,7 +71,13 @@ export default class Lightbox {
     this.imgWrapperEl.appendChild(positionHelperEl);
 
     this.imgEl = document.createElement('img');
-    addClasses(this.imgEl, this._buildClasses('img'));
+      addClasses(this.imgEl, this._buildClasses('img'));
+      if (typeof window.MAGIC_LIGHTBOX_SCALE === 'undefined') {
+	  this.imgEl.style.transform = 'scale(1,1)';
+      } else {
+	  let _scale = window.MAGIC_LIGHTBOX_SCALE;
+	  this.imgEl.style.transform = 'scale(' + _scale + ',' + _scale + ')';
+      }
     positionHelperEl.appendChild(this.imgEl);
 
     this.captionEl = document.createElement('p');
