@@ -58,6 +58,11 @@ export default class Lightbox {
     addClasses(this.innerEl, this._buildClasses('lightbox-inner'));
     this.el.appendChild(this.innerEl);
 
+    this.poweredbyEl = document.createElement('p');
+    addClasses(this.poweredbyEl, ['lightbox-poweredby']);
+    this.poweredbyEl.innerHTML = 'JS Lightbox Powered By <a href="https://github.com/imgix/luminous">Luminous</a>';
+    this.innerEl.appendChild(this.poweredbyEl);
+
     let loaderEl = document.createElement('div');
     addClasses(loaderEl, this._buildClasses('lightbox-loader'));
     this.innerEl.appendChild(loaderEl);

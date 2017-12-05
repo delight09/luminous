@@ -133,6 +133,8 @@ module.exports = class Luminous {
     this.lightbox.el.addEventListener(this.settings.closeTrigger, this.close, false);
     this.lightbox.imgEl.addEventListener(this.settings.closeTrigger, (e) => { e.stopPropagation(); },
 	    false); // do not exit on click image
+    this.lightbox.poweredbyEl.addEventListener(this.settings.closeTrigger, (e) => { e.stopPropagation(); },
+	    false); // do not exit on click poweredby
   }
 
   _unbindEvents() {
